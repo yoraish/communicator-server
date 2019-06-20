@@ -24,7 +24,7 @@ def update_msgs(data):
     """
     # take the msg that corresponds to the name in the json file, revert it to default for future use, and send the msg to msg_history.txt
     # if name is not in the json file, then add it and assign default msg
-    with open("name_to_msg.json", 'w') as name_to_msg_data:
+    with open("name_to_msg.json", 'w+') as name_to_msg_data:
         name_to_msg = json.load(name_to_msg_data.read())
         print("\n")
         print(name_to_msg)
