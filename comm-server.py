@@ -47,9 +47,10 @@ def receive_msgs_to_hist_and_dict(data):
     # now actually send the msg (write to text file)
     with open("msg_history.txt", "a") as hist_file:
         timestamp = datetime.datetime.now()
-        hist_file.write(sender_name +"@"+ str(timestamp.hour)+":"+str(timestamp.minute) +" " + msg_to_send )
+        hist_file.write(sender_name +"@"+ str(timestamp.hour)+":"+str(timestamp.minute) +" " + msg_to_send +"\n" )
 
         # now clients would be able to grab the last lines of the txt file to get updated messages
+        # visualize the file
 
 
 
