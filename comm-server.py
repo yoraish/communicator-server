@@ -40,6 +40,7 @@ def receive_msgs_to_hist_and_dict(data):
         # in any case, revert back the msg in the dict to the default now
         # this also adds the sender if it didn't exist in the dict
         name_to_msg[sender_name] = DEFAULT_MSG
+    with open("name_to_msg.json", 'w') as name_to_msg_file:
         # wrtie back to json
         json.dump(name_to_msg, name_to_msg_file)
 
