@@ -31,7 +31,7 @@ def receive_msgs_to_hist_and_dict(data):
         print("<br> Name to msg===\n")
         print(name_to_msg)
         print("<br>Sender name=", data["sender"].value)
-        sender_name = data["sender"]
+        sender_name = data["sender"].value
         # if the sender is in the dict, then use the msg that's mapped there
         if sender_name in name_to_msg:
             msg_to_send = name_to_msg[sender_name]
