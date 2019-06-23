@@ -25,8 +25,8 @@ def receive_msgs_to_hist_and_dict(data):
     """
     # take the msg that corresponds to the name in the json file, revert it to default for future use, and send the msg to msg_history.txt
     # if name is not in the json file, then add it and assign default msg
-    with open("name_to_msg.json", 'r') as name_to_msg_data:
-        name_to_msg = json.load(name_to_msg_data)
+    with open("name_to_msg.json", 'r') as name_to_msg_file:
+        name_to_msg = json.load(name_to_msg_file)
 
         print("<br> Name to msg===\n")
         print(name_to_msg)
@@ -40,6 +40,8 @@ def receive_msgs_to_hist_and_dict(data):
         # in any case, revert back the msg in the dict to the default now
         # this also adds the sender if it didn't exist in the dict
         name_to_msg[sender_name] = DEFAULT_MSG
+        # wrtie back to json
+        json.dump(name_to_msg, name_to_msg_file)
 
     # now actually send the msg (write to text file)
     with open("msg_history.txt", "a") as hist_file:
